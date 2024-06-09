@@ -5,3 +5,9 @@
 - neofetch
 - vim
 - guake
+
+# Audio:
+- Pulseaudio
+- Goxlr utility
+- kmix
+- alsa
