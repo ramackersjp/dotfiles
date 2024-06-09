@@ -557,6 +557,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 awful.util.spawn("nordpass")
 awful.util.spawn("goxlr-launcher")
 awful.util.spawn("dropbox")
+awful.util.spawn("picom")
 awful.spawn("nitrogen --restore")
 
 
