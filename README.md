@@ -11,3 +11,4 @@
 - Goxlr utility
 - kmix
 - alsa
+- pasystray
