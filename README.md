@@ -5,6 +5,7 @@
 - neofetch
 - vim
 - guake
+- htop
 
 # Audio:
 - Pulseaudio
