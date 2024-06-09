@@ -7,6 +7,7 @@
 - guake
 - htop
 - lxappearance (system dark mode).
+- Papirus icons
 
 # Audio:
 - Pulseaudio
