@@ -558,6 +558,7 @@ awful.util.spawn("nordpass")
 awful.util.spawn("goxlr-launcher")
 awful.util.spawn("dropbox")
 awful.util.spawn("picom")
+awful.util.spawn("pasystray")
 awful.spawn("nitrogen --restore")
 
 
