@@ -6,6 +6,7 @@
 - vim
 - guake
 - htop
+- lxappearance (system dark mode).
 
 # Audio:
 - Pulseaudio
