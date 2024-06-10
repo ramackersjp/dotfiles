@@ -1,4 +1,4 @@
-## My dotfils
+## My dotfiles
 
 ![Banner](screenshot.png)
 
