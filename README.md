@@ -1,5 +1,7 @@
 ## My dotfils
 
+![Banner](screenshot.png)
+
 - Picom
 - Feh (set wallpaper)
 - neofetch
