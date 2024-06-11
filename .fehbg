@@ -1,2 +1,3 @@
-#!/bin/sh
+#!/usr/bin/bash
+
 feh --no-fehbg --bg-scale '/home/jp/My-desktop-backgrounds/IMG_9734.jpeg' '/home/jp/My-desktop-backgrounds/IMG_9734.jpeg' 
