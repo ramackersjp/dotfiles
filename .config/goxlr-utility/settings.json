@@ -2,7 +2,7 @@
   "show_tray_icon": true,
   "selected_locale": null,
   "tts_enabled": false,
-  "allow_network_access": false,
+  "allow_network_access": true,
   "profile_directory": null,
   "mic_profile_directory": null,
   "samples_directory": null,
