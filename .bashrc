@@ -1,0 +1,1 @@
+/home/jp/linuxtoolbox/mybash/.bashrc
