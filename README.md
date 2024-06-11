@@ -3,7 +3,7 @@
 ![Banner](screenshot.png)
 
 - Picom
-- Feh (set wallpaper)
+- Feh (set wallpaper) but Nitrogen --restore in lua.rc works better!
 - neofetch
 - vim
 - guake
