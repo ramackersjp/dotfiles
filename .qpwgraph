@@ -1,0 +1,14 @@
+<!DOCTYPE patchbay>
+<patchbay name="qpwgraph" version="0.7.2">
+ <items>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Brave" port="Brave:output_FL"/>
+   <input node="GoXLRMini System" port="GoXLRMini:playback_FL"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Brave" port="Brave:output_FR"/>
+   <input node="GoXLRMini System" port="GoXLRMini:playback_FR"/>
+  </item>
+ </items>
+</patchbay>
+
