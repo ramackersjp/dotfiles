@@ -10,7 +10,6 @@
 - htop
 - lxappearance (system dark mode).
 - Papirus icons
-- qpwgraph
 
  yay -S awesome rofi picom i3lock-fancy xclip ttf-roboto polkit-gnome materia-theme lxappearance flameshot pnmixer network-manager-applet xfce4-power-manager qt5-styleplugins papirus-icon-theme -y
 
@@ -20,4 +19,5 @@
 - kmix
 - alsa
 - pasystray
+- qpwgraph
 
