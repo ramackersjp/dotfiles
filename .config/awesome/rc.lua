@@ -560,6 +560,7 @@ awful.util.spawn("dropbox")
 awful.util.spawn("picom")
 awful.util.spawn("pasystray")
 awful.spawn("nitrogen --restore")
+awful.util.spawn("qpwgraph")
 
 
 -- Gabs
