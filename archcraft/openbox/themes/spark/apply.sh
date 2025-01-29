@@ -9,8 +9,8 @@ TDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 THEME="${TDIR##*/}"
 
 source "$HOME"/.config/openbox/themes/"$THEME"/theme.bash
-altbackground="`pastel color $background | pastel lighten $light_value | pastel format hex`"
-altforeground="`pastel color $foreground | pastel darken $dark_value | pastel format hex`"
+altbackground="`pastel color $element_bg | pastel darken $dark_value | pastel format hex`"
+altforeground="`pastel color $element_fg | pastel lighten $light_value | pastel format hex`"
 
 ## Directories ------------------------------
 PATH_CONF="$HOME/.config"
@@ -41,9 +41,9 @@ apply_polybar() {
 	cat > ${PATH_PBAR}/colors.ini <<- EOF
 		[color]
 		
-		BACKGROUND = ${background}
-		FOREGROUND = ${foreground}
-		ALTBACKGROUND = ${altbackground}
+		BACKGROUND = ${element_bg}
+		FOREGROUND = ${element_fg}
+		ALTBACKGROUND = ${color15}
 		ALTFOREGROUND = ${altforeground}
 		ACCENT = ${accent}
 		
@@ -97,12 +97,12 @@ apply_rofi() {
 	# rewrite colors file
 	cat > ${PATH_ROFI}/shared/colors.rasi <<- EOF
 		* {
-		    background:     ${background};
-		    background-alt: ${altbackground};
-		    foreground:     ${foreground};
+		    background:     ${element_bg};
+		    background-alt: ${color15};
+		    foreground:     ${element_fg};
 		    selected:       ${accent};
-		    active:         ${color2};
-		    urgent:         ${color1};
+		    active:         ${color10};
+		    urgent:         ${color9};
 		}
 	EOF
 
@@ -295,21 +295,21 @@ apply_dunst() {
 	cat >> ${PATH_DUNST}/dunstrc <<- _EOF_
 		[urgency_low]
 		timeout = 2
-		background = "${background}"
-		foreground = "${foreground}"
-		frame_color = "${altbackground}"
+		background = "${element_bg}"
+		foreground = "${element_fg}"
+		frame_color = "${color15}"
 
 		[urgency_normal]
 		timeout = 5
-		background = "${background}"
-		foreground = "${foreground}"
-		frame_color = "${altbackground}"
+		background = "${element_bg}"
+		foreground = "${element_fg}"
+		frame_color = "${color15}"
 
 		[urgency_critical]
 		timeout = 0
-		background = "${background}"
-		foreground = "${color1}"
-		frame_color = "${color1}"
+		background = "${element_bg}"
+		foreground = "${color9}"
+		frame_color = "${color9}"
 	_EOF_
 
 	# restart dunst

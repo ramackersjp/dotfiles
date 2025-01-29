@@ -64,6 +64,11 @@ apply_polybar() {
 		ALTCYAN = ${color14}
 		ALTWHITE = ${color15}
 	EOF
+
+	# modify colors for polywins
+	sed -i ${PATH_PBAR}/scripts/polywins.sh \
+		-e "s/active_text_color=.*/active_text_color='$accent'/g" \
+		-e "s/inactive_text_color=.*/inactive_text_color='$foreground'/g"
 }
 
 ## Tint2 -----------------------------------

@@ -9,8 +9,9 @@ TDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 THEME="${TDIR##*/}"
 
 source "$HOME"/.config/openbox/themes/"$THEME"/theme.bash
-altbackground="`pastel color $background | pastel lighten $light_value | pastel format hex`"
-altforeground="`pastel color $foreground | pastel darken $dark_value | pastel format hex`"
+altbackground="`pastel color $element_bg | pastel lighten $light_value | pastel format hex`"
+altforeground="`pastel color $element_fg | pastel darken $dark_value | pastel format hex`"
+modbackground=(`pastel gradient -n 7 $element_bg $altbackground | pastel format hex`)
 
 ## Directories ------------------------------
 PATH_CONF="$HOME/.config"
@@ -41,8 +42,8 @@ apply_polybar() {
 	cat > ${PATH_PBAR}/colors.ini <<- EOF
 		[color]
 		
-		BACKGROUND = ${background}
-		FOREGROUND = ${foreground}
+		BACKGROUND = ${element_bg}
+		FOREGROUND = ${element_fg}
 		ALTBACKGROUND = ${altbackground}
 		ALTFOREGROUND = ${altforeground}
 		ACCENT = ${accent}
@@ -63,6 +64,13 @@ apply_polybar() {
 		ALTMAGENTA = ${color13}
 		ALTCYAN = ${color14}
 		ALTWHITE = ${color15}
+
+		BACKGROUND1 = ${modbackground[1]}
+		BACKGROUND2 = ${modbackground[2]}
+		BACKGROUND3 = ${modbackground[3]}
+		BACKGROUND4 = ${modbackground[4]}
+		BACKGROUND5 = ${modbackground[5]}
+		BACKGROUND6 = ${modbackground[6]}
 	EOF
 }
 
@@ -97,9 +105,9 @@ apply_rofi() {
 	# rewrite colors file
 	cat > ${PATH_ROFI}/shared/colors.rasi <<- EOF
 		* {
-		    background:     ${background};
-		    background-alt: ${altbackground};
-		    foreground:     ${foreground};
+		    background:     ${element_bg};
+		    background-alt: ${modbackground[2]};
+		    foreground:     ${element_fg};
 		    selected:       ${accent};
 		    active:         ${color2};
 		    urgent:         ${color1};
@@ -295,19 +303,19 @@ apply_dunst() {
 	cat >> ${PATH_DUNST}/dunstrc <<- _EOF_
 		[urgency_low]
 		timeout = 2
-		background = "${background}"
-		foreground = "${foreground}"
+		background = "${element_bg}"
+		foreground = "${element_fg}"
 		frame_color = "${altbackground}"
 
 		[urgency_normal]
 		timeout = 5
-		background = "${background}"
-		foreground = "${foreground}"
+		background = "${element_bg}"
+		foreground = "${element_fg}"
 		frame_color = "${altbackground}"
 
 		[urgency_critical]
 		timeout = 0
-		background = "${background}"
+		background = "${element_bg}"
 		foreground = "${color1}"
 		frame_color = "${color1}"
 	_EOF_

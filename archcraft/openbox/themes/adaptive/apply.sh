@@ -11,6 +11,7 @@ THEME="${TDIR##*/}"
 source "$HOME"/.config/openbox/themes/"$THEME"/theme.bash
 altbackground="`pastel color $background | pastel lighten $light_value | pastel format hex`"
 altforeground="`pastel color $foreground | pastel darken $dark_value | pastel format hex`"
+modbackground=(`pastel gradient -n 7 $background $altbackground | pastel format hex`)
 
 ## Directories ------------------------------
 PATH_CONF="$HOME/.config"
@@ -63,6 +64,13 @@ apply_polybar() {
 		ALTMAGENTA = ${color13}
 		ALTCYAN = ${color14}
 		ALTWHITE = ${color15}
+
+		BACKGROUND1 = ${modbackground[1]}
+		BACKGROUND2 = ${modbackground[2]}
+		BACKGROUND3 = ${modbackground[3]}
+		BACKGROUND4 = ${modbackground[4]}
+		BACKGROUND5 = ${modbackground[5]}
+		BACKGROUND6 = ${modbackground[6]}
 	EOF
 }
 
@@ -98,7 +106,7 @@ apply_rofi() {
 	cat > ${PATH_ROFI}/shared/colors.rasi <<- EOF
 		* {
 		    background:     ${background};
-		    background-alt: ${altbackground};
+		    background-alt: ${modbackground[2]};
 		    foreground:     ${foreground};
 		    selected:       ${accent};
 		    active:         ${color2};

@@ -9,8 +9,8 @@ TDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 THEME="${TDIR##*/}"
 
 source "$HOME"/.config/openbox/themes/"$THEME"/theme.bash
-altbackground="`pastel color $background | pastel lighten $light_value | pastel format hex`"
-altforeground="`pastel color $foreground | pastel darken $dark_value | pastel format hex`"
+altbackground="`pastel color $background | pastel darken $dark_value | pastel format hex`"
+altforeground="`pastel color $foreground | pastel lighten $light_value | pastel format hex`"
 
 ## Directories ------------------------------
 PATH_CONF="$HOME/.config"

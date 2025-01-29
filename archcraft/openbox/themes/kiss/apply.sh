@@ -9,8 +9,8 @@ TDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 THEME="${TDIR##*/}"
 
 source "$HOME"/.config/openbox/themes/"$THEME"/theme.bash
-altbackground="`pastel color $background | pastel lighten $light_value | pastel format hex`"
-altforeground="`pastel color $foreground | pastel darken $dark_value | pastel format hex`"
+altbackground="`pastel color $element_bg | pastel lighten $light_value | pastel format hex`"
+altforeground="`pastel color $element_fg | pastel darken $dark_value | pastel format hex`"
 
 ## Directories ------------------------------
 PATH_CONF="$HOME/.config"
@@ -41,11 +41,11 @@ apply_polybar() {
 	cat > ${PATH_PBAR}/colors.ini <<- EOF
 		[color]
 		
-		BACKGROUND = ${background}
-		FOREGROUND = ${foreground}
+		BACKGROUND = ${element_bg}
+		FOREGROUND = ${element_fg}
 		ALTBACKGROUND = ${altbackground}
 		ALTFOREGROUND = ${altforeground}
-		ACCENT = ${accent}
+		ACCENT = ${element_hl}
 		
 		BLACK = ${color0}
 		RED = ${color1}
@@ -74,7 +74,7 @@ apply_tint2() {
 
 # Rofi --------------------------------------
 apply_rofi() {
-	border_color="`pastel color $accent | pastel format rgb-float | tr -d '[:alpha:]','(',')' | sed 's/ /,/g'`"
+	border_color="`pastel color $element_hl | pastel format rgb-float | tr -d '[:alpha:]','(',')' | sed 's/ /,/g'`"
 
 	# modify screenshots scripts
 	sed -i -e "s/border=.*/border='$border_color'/g" \
@@ -97,12 +97,12 @@ apply_rofi() {
 	# rewrite colors file
 	cat > ${PATH_ROFI}/shared/colors.rasi <<- EOF
 		* {
-		    background:     ${background};
+		    background:     ${element_bg};
 		    background-alt: ${altbackground};
-		    foreground:     ${foreground};
-		    selected:       ${accent};
-		    active:         ${color2};
-		    urgent:         ${color1};
+		    foreground:     ${element_fg};
+		    selected:       ${element_hl};
+		    active:         ${element_ac};
+		    urgent:         ${element_ur};
 		}
 	EOF
 

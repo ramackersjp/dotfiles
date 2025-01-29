@@ -63,6 +63,10 @@ apply_polybar() {
 		ALTMAGENTA = ${color13}
 		ALTCYAN = ${color14}
 		ALTWHITE = ${color15}
+
+		COLOR_R = ${color_red}
+		COLOR_G = ${color_green}
+		COLOR_Y = ${color_yellow}
 	EOF
 }
 
@@ -101,8 +105,8 @@ apply_rofi() {
 		    background-alt: ${altbackground};
 		    foreground:     ${foreground};
 		    selected:       ${accent};
-		    active:         ${color2};
-		    urgent:         ${color1};
+		    active:         ${color_green};
+		    urgent:         ${color_red};
 		}
 	EOF
 
@@ -297,19 +301,19 @@ apply_dunst() {
 		timeout = 2
 		background = "${background}"
 		foreground = "${foreground}"
-		frame_color = "${altbackground}"
+		frame_color = "${accent}"
 
 		[urgency_normal]
 		timeout = 5
 		background = "${background}"
 		foreground = "${foreground}"
-		frame_color = "${altbackground}"
+		frame_color = "${accent}"
 
 		[urgency_critical]
 		timeout = 0
 		background = "${background}"
-		foreground = "${color1}"
-		frame_color = "${color1}"
+		foreground = "${color_red}"
+		frame_color = "${color_red}"
 	_EOF_
 
 	# restart dunst
