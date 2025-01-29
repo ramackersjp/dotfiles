@@ -33,6 +33,8 @@ packages=(
     "nordpass-bin"
     "dropbox"
     "spotify"
+    "Python3"
+    "python-pip"
 )
 
 # Install packages
