@@ -37,6 +37,7 @@ packages=(
     "python-pip"
     "python-pyautogui"
     "docker-desktop"
+    "bluemail"
 )
 
 # Install packages
