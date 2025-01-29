@@ -35,6 +35,8 @@ packages=(
     "spotify"
     "Python3"
     "python-pip"
+    "python-pyautogui"
+    "docker-desktop"
 )
 
 # Install packages
