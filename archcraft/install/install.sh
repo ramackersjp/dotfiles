@@ -35,6 +35,7 @@ packages=(
     "spotify"
     "Python3"
     "python-pip"
+    "python-pyautogui"
 )
 
 # Install packages
