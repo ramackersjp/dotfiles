@@ -32,6 +32,7 @@ packages=(
     "ledger-live"
     "nordpass-bin"
     "dropbox"
+    "spotify"
 )
 
 # Install packages
